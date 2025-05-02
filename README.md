@@ -1,2 +1,25 @@
 # Managing_Undo
 Managing_Undo ORACLE
+
+
+--
+
+--Undo undo_retention
+Undo 
+SQL> show parameter undo;
+NAME                                               TYPE        VALUE                                                                                                
+-------------------------------------------------- ----------- -----------
+temp_undo_enabled                                  boolean     FALSE                                                                                                
+undo_management                                    string      AUTO                                                                                                 
+undo_retention                                     integer     900                                                                                                  
+undo_tablespace                                    string      UNDOTBS1  
+
+
+show parameter undo;
+
+select *from v$tablespace;
+
+alter system set undo_tablespace=UNDOTBS1
+
+--change undo_retention
+SQL> alter system set undo_retention=3600; 
